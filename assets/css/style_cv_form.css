@@ -1,0 +1,53 @@
+/* Formulario */
+.header {
+    font-size: 27px;
+    padding: 10px;
+}
+
+.bigicon {
+    font-size: 35px;
+}
+
+#submit {
+    height: 45px;
+    width: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    border-radius: 50%;
+    border: none;
+
+    color: var(--btnFontColor);
+    background-color: var(--btnBg);
+    font-family: "Barlow Condensed", helvetica;
+
+}
+
+button#submit.btn:hover {
+    color: var(--navfooterColorHover);
+}
+
+.error {
+    color: red;
+    font-size: 80%;
+}
+
+.form {
+    /* background-color: rgb(255, 255, 255); */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: dashed 1px white;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+@media (max-width: 410px) {
+    #formcontact {
+        font-size: 100%;
+    }
+
+}
+
