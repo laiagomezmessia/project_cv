@@ -1,0 +1,70 @@
+{
+    "experiencia": [
+        {
+            "puesto": "Coordiación, gestión y project manager",
+            "empresa": "Asociación Museos de Ciencia | ",
+            "fecha": "2019 - Actualidad",
+            "descripcion": [
+                "Gestión, programación y coordinación de proyectos y actividades",
+                "Gestión y coordinación de la entidad",
+                "Administración",
+                "Contabilidad",
+                "Tesorería y coordinación con gestoría",
+                "Comunicación interna y web"
+            ]
+        },
+        {
+            "puesto": "Project Manager, administración y comunicación",
+            "empresa": "Calidoscoop SCCL |",
+            "fecha": "2020-2022",
+            "descripcion": [
+                "Gestión y coordinación de proyectos",
+                "Gestión y administración de subvenciones y licitaciones",
+                "Contabilidad",
+                "Marketing y comunicación"
+            ]
+        },
+        {
+            "puesto": "Ticketing y administración",
+            "empresa": "Teatre Nacional de Catalunya | ",
+            "fecha": "2017-2020",
+            "descripcion": [
+                "Atención al público",
+                "Tareas administrativas, gestión y venta de entradas",
+                "Acomodación como personal de sala",
+                "Contabilidad",
+                "Tesorería y coordinación con gestoría",
+                "Comunicación interna y web"
+            ]
+        },
+        {
+            "puesto": "Programación, gestión y dinamización",
+            "empresa": "Centro Cultural Casa Orlandai |",
+            "fecha": "2018",
+            "descripcion": [
+                "Programación, organitzación y producción de actividades culturales y regidorias",
+                "Elaboración de la diagnosis y redacción del plan de acción contra agresiones sexistas",
+                "Identificación de públicos y agentes culturales del territorio para el plan de participación"
+            ]
+        },
+        {
+            "puesto": "Gestión editorial y community manager",
+            "empresa": "Servicio de Biblioteca para la Investigación. Universidad Oberta de Catalunya |",
+            "fecha": "2018",
+            "descripcion": [
+                "Gestión editorial de la revista open acces ETHE - 'International Journal of Educational Technology in Higher Education'",
+                "Elaboración de la diagnosis y redacción del plan de acción contra agresiones sexistas",
+                "Responsable de comunicación y de les redes sociales de la revista"
+            ]
+        },
+        {
+            "puesto": "Camarera",
+            "empresa": "",
+            "fecha": "2012-2018",
+            "descripcion": [
+                
+            ]
+        }
+
+    ]
+}

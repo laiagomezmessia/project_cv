@@ -213,6 +213,12 @@ article ul {
 
 }
 
+
+.table td {
+    padding-left: 2px;
+}
+
+
 .espacio {
     padding-left: 10px;
 }

@@ -14,45 +14,45 @@
 
 // Función modo dark con addEventListener
 function DarkLight() {
-    const cuerpo = document.body;
-    cuerpo.classList.toggle('light-theme');
-    cuerpo.classList.toggle('dark-theme');
-    let hamb = document.getElementById("navicon");
-  
-    const className = cuerpo.className;
-    const oscuroBtn = document.getElementById('oscuro');
-  
-    if (className == "light-theme") {
-      oscuroBtn.textContent = "Dark";
-      hamb.classList.add('navicon');
-    } else {
-      oscuroBtn.textContent = "Light";
-      hamb.classList.remove('navicon');
-    }
+  const cuerpo = document.body;
+  cuerpo.classList.toggle('light-theme');
+  cuerpo.classList.toggle('dark-theme');
+  let hamb = document.getElementById("navicon");
+
+  const className = cuerpo.className;
+  const oscuroBtn = document.getElementById('oscuro');
+
+  if (className == "light-theme") {
+    oscuroBtn.textContent = "Dark";
+    hamb.classList.add('navicon');
+  } else {
+    oscuroBtn.textContent = "Light";
+    hamb.classList.remove('navicon');
   }
+}
 
 
 // Función DarkSegunHora
 function DarkSegunHora() {
-    const cuerpo = document.body;
-    const horaActual = new Date().getHours();
-    const esDeNoche = horaActual >= 21 || horaActual < 6;
-  
-    if (esDeNoche) {
-      cuerpo.classList.remove('light-theme');
-      cuerpo.classList.add('dark-theme');
-    } else {
-      cuerpo.classList.remove('dark-theme');
-      cuerpo.classList.add('light-theme');
-    }
-    
-    const oscuroBtn = document.getElementById('oscuro');
-    if (cuerpo.classList.contains('dark-theme')) {
-      oscuroBtn.textContent = 'Light';
-    } else {
-      oscuroBtn.textContent = 'Dark';
-    }
+  const cuerpo = document.body;
+  const horaActual = new Date().getHours();
+  const esDeNoche = horaActual >= 21 || horaActual < 6;
+
+  if (esDeNoche) {
+    cuerpo.classList.remove('light-theme');
+    cuerpo.classList.add('dark-theme');
+  } else {
+    cuerpo.classList.remove('dark-theme');
+    cuerpo.classList.add('light-theme');
   }
+
+  const oscuroBtn = document.getElementById('oscuro');
+  if (cuerpo.classList.contains('dark-theme')) {
+    oscuroBtn.textContent = 'Light';
+  } else {
+    oscuroBtn.textContent = 'Dark';
+  }
+}
 // llama la función para cambiar el tema cuando la página esté cargada
 document.addEventListener('DOMContentLoaded', DarkSegunHora);
 // llama la función DarkLight al hacer click en el botón
@@ -60,19 +60,19 @@ document.getElementById('oscuro').addEventListener('click', DarkLight);
 
 
 // Función de fecha de hoy en jquery situada en el footer
-$(document).ready(function() {
-    const hoy = new Date();
-    const dia = hoy.getDate();
+$(document).ready(function () {
+  const hoy = new Date();
+  const dia = hoy.getDate();
 
-    const weekday = [" Domingo", " Lunes", " Martes", " Miércoles", " Jueves", " Viernes", " Sábado"];
-    const sem = weekday[hoy.getDay()];
+  const weekday = [" Domingo", " Lunes", " Martes", " Miércoles", " Jueves", " Viernes", " Sábado"];
+  const sem = weekday[hoy.getDay()];
 
-    const month = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]
-    const mes = month[hoy.getMonth()]
+  const month = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+  const mes = month[hoy.getMonth()]
 
-    const ano = hoy.getFullYear(); 
+  const ano = hoy.getFullYear();
 
-    $('#fecha').text("  |  " + sem + ", " + dia + " de " + mes + " de " + ano);
+  $('#fecha').text("  |  " + sem + ", " + dia + " de " + mes + " de " + ano);
 });
 
 
@@ -83,7 +83,7 @@ var navMenu = document.getElementById('nav');
 var menuItems = navMenu.getElementsByClassName('nav-link');
 // Agregar un evento de clic a cada elemento del menú
 for (var i = 0; i < menuItems.length; i++) {
-  menuItems[i].addEventListener('click', function() {
+  menuItems[i].addEventListener('click', function () {
     // Cerrar el menú
     var toggleButton = navMenu.getElementsByClassName('navbar-toggler')[0];
     if (toggleButton.getAttribute('aria-expanded') === 'true') {
@@ -99,7 +99,7 @@ var navMenu = document.getElementById('nav');
 var menuItems = navMenu.getElementsByClassName('nav-link');
 // Agregar un evento de clic a cada elemento del menú
 for (var i = 0; i < menuItems.length; i++) {
-  menuItems[i].addEventListener('click', function(event) {
+  menuItems[i].addEventListener('click', function (event) {
     event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
     var targetId = this.getAttribute('href'); // Obtener el ID del elemento de destino
     var targetElement = document.querySelector(targetId); // Obtener el elemento de destino
@@ -116,3 +116,44 @@ for (var i = 0; i < menuItems.length; i++) {
 }
 
 
+// Función para extraer datos del jsnon (apartado experiencia profesional)
+fetch("exp.json")
+  .then(response => response.json())
+  .then(respuesta => {
+    // document.getElementById("nombre").innerHTML = respuesta.nombre;
+    // document.getElementById("titulo").innerHTML = respuesta.titulo;
+    // document.getElementById("resumen").innerHTML = respuesta.resumen;
+
+    // let educacionHTML = "";
+    // for (let i = 0; i < respuesta.educacion.length; i++) {
+    //   let educacion = respuesta.educacion[i];
+    //   let itemHTML = "<li><strong>" + educacion.titulo + "</strong> - " + educacion.institucion + " (" + educacion.fecha + ")</li>";
+    //   educacionHTML += itemHTML;
+    // }
+    // document.getElementById("educacion").innerHTML = educacionHTML;
+
+    let experienciaHTML = "";
+    for (let i = 0; i < respuesta.experiencia.length; i++) {
+      let experiencia = respuesta.experiencia[i];
+      console.log(experiencia.descripcion)
+      let descripcionHTML = experiencia.descripcion.map(element => "<li>" + element + "</li>").join(""); // Generar el HTML de los elementos de la lista
+
+
+      let itemHTML = "<li><strong>" + experiencia.puesto + "</strong> - " + experiencia.empresa + " (" + experiencia.fecha + ")<br>" +
+      "<ul>" + descripcionHTML + "</ul>"
+      + "</li>";
+      experienciaHTML += itemHTML;
+    }
+    document.getElementById("experiencia").innerHTML = experienciaHTML;
+
+    // let habilidadesHTML = "";
+    // for (let i = 0; i < respuesta.habilidades.length; i++) {
+    //   let habilidad = respuesta.habilidades[i];
+    //   let itemHTML = "<li>" + habilidad + "</li>";
+    //   habilidadesHTML += itemHTML;
+    // }
+    // document.getElementById("habilidades").innerHTML = habilidadesHTML;
+  })
+  .catch(error => {
+    console.error("Error al cargar el archivo: ", error);
+  });
