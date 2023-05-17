@@ -157,3 +157,28 @@ fetch("exp.json")
   .catch(error => {
     console.error("Error al cargar el archivo: ", error);
   });
+
+
+// Funciones para animar elementos
+// Rotar elemento
+  function rotar(elemento) {
+    elemento.addEventListener('mouseover', function() {
+      elemento.classList.toggle('rotate-center');
+    });
+  }
+
+var menuhamb = document.getElementById("navicon");
+rotar(menuhamb);
+
+var botonoscuro = document.getElementById("oscuro");
+rotar(botonoscuro);
+
+// Subrayar elemento
+function subrayar(elemento) {
+  elemento.addEventListener('mouseover', function() {
+    elemento.classList.toggle('subrayar');
+  });
+}
+
+var sub = document.getElementById("LaiaGM");
+subrayar(sub);
