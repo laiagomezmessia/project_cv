@@ -13,10 +13,10 @@
 This is my first frontend project as a web developer, and it consists of a responsive webpage that serves as my curriculum vitae.
 In addition to the HTML5 structure, CSS3 stylesheet, and JavaScript functions, I have made use of libraries such as Bootstrap and jQuery. I have also implemented a form, and one of the sections is dynamically generated from a JSON file. The webpage includes animations, and I have utilized icon and font libraries such as Font Awesome and Google Fonts.
 Although there is room for improvement, and I hope to continue working on this project, I am currently satisfied with the results.
-__ 
-Este es mi primer proyecto de frontend como desarrolladora web y consiste en un una página web responsive que es mi curriculum vitae. 
+
+<!-- Este es mi primer proyecto de frontend como desarrolladora web y consiste en un una página web responsive que es mi curriculum vitae. 
 Además de la estructura HTML5, la hoja de estiloc CSS3 y las funciones en JavaScript, he procurado usar librerias como Bootstrap y Jquery. También he implementado un formulario, uno de los apartados se crea dinámicamente a partir de un archivo json, tiene animaciones y he usado librarias de iconos y fuentes como Font Awesome y Google Fonts.
-A pesar de que es mejorable y espero seguir trabajando en este proyecto, de momento estoy contenta con el resultado. 
+A pesar de que es mejorable y espero seguir trabajando en este proyecto, de momento estoy contenta con el resultado.  -->
 ***
 ### Screenshot
 ![ImageCV](./assets/img/screenshot.jpg)
