@@ -55,13 +55,12 @@ function validateForm() {
             printError("nameErr", "");
             nameErr = false;
         }
-    }
+    };
 
     // Validate email address
     if (email == "") {
         printError("emailErr", "Por favor, ingresa un correo válido");
     } else {
-        // Regular expression for basic email validation
         var regex = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
         if (regex.test(email) === false) {
             printError("emailErr", "Por favor, ingresa un correo válido");
@@ -69,19 +68,20 @@ function validateForm() {
             printError("emailErr", "");
             emailErr = false;
         }
-    }
+    };
 
     // Validate mobile number
     if (mobile == "") {
         printError("mobileErr", "Por favor, ingresa un teléfono válido");
     } else {
+        var regex = /^[0-9]{9}$/;
          if (regex.test(mobile) === false) {
             printError("mobileErr", "Por favor, ingresa un teléfono válido");
         } else {
             printError("mobileErr", "");
             mobileErr = false;
         }
-    }
+    };
 
     // Validate message
     if (message == "") {
@@ -94,7 +94,7 @@ function validateForm() {
             printError("messageErr", "");
             messageErr = false;
         }
-    }
+    };
 
 
     // Prevent the form from being submitted if there are any errors
@@ -109,7 +109,7 @@ function validateForm() {
 
             // Display input data in a dialog box before submitting the form
             alert(text);
-    }
+    };
 };
 
 
