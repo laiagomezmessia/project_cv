@@ -195,3 +195,22 @@ for (var i = 0; i < menuItems.length; i++) {
     }
   });
 }
+
+
+// Funciones para animar elementos
+// Rotar elemento
+function rotar(elemento) {
+    elemento.addEventListener('mouseover', function() {
+      elemento.classList.toggle('rotate-center');
+    });
+  }
+
+var menuhamb = document.getElementById("btnnavicon");
+rotar(menuhamb);
+
+var botonoscuro = document.getElementById("oscuro");
+rotar(botonoscuro);
+
+var botonsubmit = document.getElementById("submit");
+rotar(botonsubmit);
+

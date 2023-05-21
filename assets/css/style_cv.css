@@ -4,17 +4,17 @@
 
 :root {
     --A: rgb(95, 133, 161);
-    --B: #EBDABFff;
-    --C: rgb(242, 244, 246);
-    --D: #322A26ff;
+    --B: rgb(224, 205, 173);
+    --C: rgb(244, 247, 221);
+    --D: rgb(42, 73, 96);
 }
 
 
 /*  Body */
+
 .container-fluid {
     padding-left: 5%;
     padding-right: 5%;
-
 }
 
 body {
@@ -25,15 +25,11 @@ body {
 }
 
 /* Barra NAV */
+
 nav {
     background-color: var(--navColor);
-    /* 
-    border-radius: 20px;
-    perspective: 1px;     */
-
     padding: 14px 15px;
     margin-bottom: 30px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,18 +50,29 @@ nav {
     color: var(--navfooterColorHover)
 }
 
-
 .navicon {
     filter: invert(46%) sepia(57%) saturate(260%) hue-rotate(162deg) brightness(96%) contrast(89%);
 }
 
-
-button#oscuro.btn:hover {
-    color: var(--navfooterColorHover);
+a.nav-link {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
+    
 }
 
+a.nav-link:hover,
+a .nav-link:focus {
+    background-size: 100% 2px;
+    
+    
+}
 
 /* Botón con switch de modo Light y modo dark dentro del Nav */
+
 #oscuro {
     float: right;
 
@@ -83,17 +90,15 @@ button#oscuro.btn:hover {
 
     color: var(--btnFontColor);
     background-color: var(--btnBg);
-
 }
 
-.btn:hover {
-    /* border: 1px dotted;
-    border-color: rgb(252, 252, 255) */
+
+button#oscuro:hover {
     color: var(--navfooterColorHover);
 }
 
-
 /* Variables de modo Light y modo dark  */
+
 .light-theme {
     --bg: var(--B);
     --fontColor: var(--A);
@@ -120,16 +125,23 @@ button#oscuro.btn:hover {
     --footerColor: var(--A);
     --footerFColor: var(--B);
     --footerFColorHover: var(--C);
-
 }
 
-
 /* Main */
+
 main {
     margin-top: 20px;
 }
 
-/* Tamaño de fuente por defecto */
+/* Título */
+
+#titulo {
+    padding-left: 0px;
+    padding-bottom: 5px;
+}
+
+/* Tamaños de fuentes */
+
 #B1 {
     font-size: 100%;
 }
@@ -138,8 +150,12 @@ h1,
 h2,
 h3 {
     font-family: "Barlow Condensed", helvetica;
-
 }
+
+h5 {
+    font-size: 1.2em;
+    text-decoration: underline dotted;
+    text-underline-offset: 8px;}
 
 
 p {
@@ -147,8 +163,9 @@ p {
     padding-left: 10px;
     padding-right: 10px;
     font-family: "Montserrat", helvetica;
-
 }
+
+/* Estilo de los bloques */
 
 .bloc {
     /* background-color: rgb(255, 255, 255); */
@@ -159,10 +176,12 @@ p {
     word-wrap: break-word;
 }
 
+
+/* Estilos de "Curriculum Vitae"  */
+
 #CV {
     display: flex;
     align-items: center;
-
 }
 
 .iconCV {
@@ -170,14 +189,15 @@ p {
     align-items: center;
     color: var(--fontColor);
     font-size: 20px;
-
-
 }
 
 .iconCV:hover {
     color: var(--navfooterColorHover);
     text-decoration: underline;
 }
+
+
+/* Estilos de la imagen */
 
 img {
     max-width: 100%;
@@ -193,25 +213,20 @@ img:hover {
     filter: grayscale(0%);
 }
 
-video {
-    max-width: 100%;
-    word-wrap: break-word;
-    height: auto;
-    width: auto;
-align-items: center;
+/* Estilos de la lista formación y idiomas */
 
-}
-
-article ul li {
+#form ul li {
     text-align: justify;
     padding: 4px;
+    list-style-type: circle;
 }
 
-article ul {
+#form ul {
     text-align: right;
     padding-right: 10px;
-
 }
+
+/* Estilos de la tabla */
 
 .table {
     color: var(--fontColor);
@@ -220,19 +235,42 @@ article ul {
 .iconoTable {
     color: var(--fontColor);
     font-size: 25px;
-
 }
-
 
 .table td {
     padding-left: 2px;
 }
 
+/* Estilos tabla dinámica */
 
-.espacio {
-    padding-left: 10px;
+.list-style {
+    list-style-type: circle;
 }
 
+
+/* Estilos de la lista +Info & Certificados */
+
+#cert ul li {
+    text-align: justify;
+    padding: 4px;
+    list-style-type: circle;
+}
+
+#cert ul {
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Estilos del video */
+
+video {
+    max-width: 100%;
+    word-wrap: break-word;
+    height: auto;
+    width: auto;
+    align-items: center;
+    
+}
 
 #storm a {
     text-decoration: none;
@@ -245,6 +283,7 @@ article ul {
     text-decoration: underline;
 }
 
+/* Footer */
 
 #footer {
     clear: both;
@@ -252,11 +291,8 @@ article ul {
     text-align: center;
     margin-top: 20px;
     background-color: var(--navColor);
-    /* border-radius: 20px;
-    perspective: 1px; */
     padding: 2px 1px;
     font-family: "Barlow Condensed", helvetica;
-
 }
 
 #footer .row {
@@ -269,15 +305,12 @@ article ul {
     justify-content: center;
     align-items: center;
     font-family: "Barlow Condensed", helvetica;
-
 }
 
 #footer .row a {
     text-decoration: none;
     color: var(--footerFColor);
     font-family: "Barlow Condensed", helvetica;
-
-
 }
 
 
@@ -291,7 +324,11 @@ article ul {
     margin: 0% 1%;
 }
 
+
+ /* Querys */
+ 
 /* Contacto para pantallas pequeñas */
+
 @media (max-width: 767px) {
     #contacto {
         display: flex;
@@ -300,6 +337,7 @@ article ul {
 }
 
 /* Botón dark para pantallas pequeñas */
+
 @media (min-width: 990px) {
     #oscuro {
         position: absolute;
@@ -310,51 +348,34 @@ article ul {
 /* Ajusta el tamaño del texto en pantallas pequeñas */
 
 @media (max-width: 410px) {
-
     #B1 h1 {
         font-size: 150%;
     }
-
 }
 
 @media (max-width: 410px) {
-
     h3 {
         font-size: 120%;
     }
-
 }
 
 @media (max-width: 410px) {
-
     h5 {
         font-size: 100%;
     }
-
 }
 
 @media (max-width: 410px) {
-
     p {
         font-size: 100%;
     }
-
 }
 
-/* ANIMACIONES */
 
-/* ----------------------------------------------
- * Generated by Animista on 2023-5-15 13:30:5
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
+/* Animaciones */
 
-/**
- * ----------------------------------------
- * animation scale-up-hor-left
- * ----------------------------------------
- */
+/* animacion aparición título + cv */
+
 @-webkit-keyframes scale-up-hor-left {
     0% {
         -webkit-transform: scaleX(0.4);
@@ -392,12 +413,7 @@ article ul {
     animation: scale-up-hor-left 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
-
-/**
- * ----------------------------------------
- * animation rotate-center
- * ----------------------------------------
- */
+/* Animación rotar */
 
 @-webkit-keyframes rotate-center {
     0% {
@@ -427,25 +443,3 @@ article ul {
     -webkit-animation: rotate-center 1s ease-in-out both;
     animation: rotate-center 1s ease-in-out both;
 }
-
-
-/* Animación para subrayar */
-
-@keyframes subrayar {
-    0% {
-        background-position: left bottom;
-        background-size: 0% 2px;
-    }
-
-    100% {
-        background-position: right bottom;
-        background-size: 100% 2px;
-    }
-}
-
-.subrayar {
-    background-image: linear-gradient(to right, #000000 50%, transparent 50%);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 0% 2px;
-    animation: underline-left-to-right 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;}

@@ -1,18 +1,5 @@
-// Función modo dark con onclick
-// function DarkLight (){
-//     document.body.classList.toggle('light-theme');
-//     document.body.classList.toggle('dark-theme');
-
-//     const className = document.body.className;
-//     if(className == "light-theme") {
-//         this.textContent = "Dark";
-//     } else {
-//         this.textContent = "Light";
-//     }
-// }
-
-
 // Función modo dark con addEventListener
+
 function DarkLight() {
   const cuerpo = document.body;
   cuerpo.classList.toggle('light-theme');
@@ -33,6 +20,7 @@ function DarkLight() {
 
 
 // Función DarkSegunHora
+
 function DarkSegunHora() {
   const cuerpo = document.body;
   const horaActual = new Date().getHours();
@@ -60,6 +48,7 @@ document.getElementById('oscuro').addEventListener('click', DarkLight);
 
 
 // Función de fecha de hoy en jquery situada en el footer
+
 $(document).ready(function () {
   const hoy = new Date();
   const dia = hoy.getDate();
@@ -77,6 +66,7 @@ $(document).ready(function () {
 
 
 // Función para que cuando haga click en un elemento del menú hamburguesa, éste se cierre solo
+
 // Obtener la referencia al elemento del menú hamburguesa
 var navMenu = document.getElementById('nav');
 // Obtener todas las opciones del menú
@@ -93,6 +83,7 @@ for (var i = 0; i < menuItems.length; i++) {
 }
 
 // Función para que cuando haga click en un elemento del menú hamburguesa y se cierre, se desplace a la posición que toca
+
 // Obtener la referencia al elemento del menú hamburguesa
 var navMenu = document.getElementById('nav');
 // Obtener todas las opciones del menú
@@ -116,69 +107,50 @@ for (var i = 0; i < menuItems.length; i++) {
 }
 
 
-// Función para extraer datos del jsnon (apartado experiencia profesional)
+// Función para extraer datos del json (apartado experiencia profesional)
+
 fetch("exp.json")
   .then(response => response.json())
   .then(respuesta => {
-    // document.getElementById("nombre").innerHTML = respuesta.nombre;
-    // document.getElementById("titulo").innerHTML = respuesta.titulo;
-    // document.getElementById("resumen").innerHTML = respuesta.resumen;
-
-    // let educacionHTML = "";
-    // for (let i = 0; i < respuesta.educacion.length; i++) {
-    //   let educacion = respuesta.educacion[i];
-    //   let itemHTML = "<li><strong>" + educacion.titulo + "</strong> - " + educacion.institucion + " (" + educacion.fecha + ")</li>";
-    //   educacionHTML += itemHTML;
-    // }
-    // document.getElementById("educacion").innerHTML = educacionHTML;
 
     let experienciaHTML = "";
     for (let i = 0; i < respuesta.experiencia.length; i++) {
       let experiencia = respuesta.experiencia[i];
-      console.log(experiencia.descripcion)
       let descripcionHTML = experiencia.descripcion.map(element => "<li>" + element + "</li>").join(""); // Generar el HTML de los elementos de la lista
-
-
-      let itemHTML = "<li><strong>" + experiencia.puesto + "</strong> - " + experiencia.empresa + " (" + experiencia.fecha + ")<br>" +
-      "<ul>" + descripcionHTML + "</ul>"
-      + "</li>";
+      let itemHTML = "<li class='list-style'><strong>" + experiencia.puesto + "</strong> - " + experiencia.empresa + " (" + experiencia.fecha + ")<br>" +
+        "<ul>" + descripcionHTML + "</ul>"
+        + "</li>";
       experienciaHTML += itemHTML;
     }
     document.getElementById("experiencia").innerHTML = experienciaHTML;
-
-    // let habilidadesHTML = "";
-    // for (let i = 0; i < respuesta.habilidades.length; i++) {
-    //   let habilidad = respuesta.habilidades[i];
-    //   let itemHTML = "<li>" + habilidad + "</li>";
-    //   habilidadesHTML += itemHTML;
-    // }
-    // document.getElementById("habilidades").innerHTML = habilidadesHTML;
+    let dynamicLists = document.getElementById("experiencia").querySelectorAll("ul");
+    dynamicLists.forEach(list => {
+      list.style.listStyleType = "square";
+    });
   })
+
+
   .catch(error => {
     console.error("Error al cargar el archivo: ", error);
   });
 
 
 // Funciones para animar elementos
-// Rotar elemento
-  function rotar(elemento) {
-    elemento.addEventListener('mouseover', function() {
-      elemento.classList.toggle('rotate-center');
-    });
-  }
 
-var menuhamb = document.getElementById("navicon");
+// Rotar elemento
+
+function rotar(elemento) {
+  elemento.addEventListener('mouseover', function () {
+    elemento.classList.toggle('rotate-center');
+    console.log("hola")
+  });
+}
+
+var menuhamb = document.getElementById("btnnavicon");
 rotar(menuhamb);
 
 var botonoscuro = document.getElementById("oscuro");
 rotar(botonoscuro);
 
-// Subrayar elemento
-function subrayar(elemento) {
-  elemento.addEventListener('mouseover', function() {
-    elemento.classList.toggle('subrayar');
-  });
-}
 
-var sub = document.getElementById("LaiaGM");
-subrayar(sub);
+
