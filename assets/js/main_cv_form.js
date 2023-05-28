@@ -115,8 +115,6 @@ function validateForm() {
 
 
 
-
-
 // Funciones de la página
 
 // Función modo dark con addEventListener
@@ -124,14 +122,17 @@ function DarkLight() {
     const cuerpo = document.body;
     cuerpo.classList.toggle('light-theme');
     cuerpo.classList.toggle('dark-theme');
+    let hamb = document.getElementById("navicon");
   
     const className = cuerpo.className;
     const oscuroBtn = document.getElementById('oscuro');
   
     if (className == "light-theme") {
       oscuroBtn.textContent = "Dark";
+      hamb.classList.add('navicon');
     } else {
       oscuroBtn.textContent = "Light";
+      hamb.classList.remove('navicon');
     }
   }
 

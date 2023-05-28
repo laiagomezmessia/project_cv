@@ -83,7 +83,6 @@ for (var i = 0; i < menuItems.length; i++) {
 }
 
 // Función para que cuando haga click en un elemento del menú hamburguesa y se cierre, se desplace a la posición que toca
-
 // Obtener la referencia al elemento del menú hamburguesa
 var navMenu = document.getElementById('nav');
 // Obtener todas las opciones del menú
@@ -108,7 +107,6 @@ for (var i = 0; i < menuItems.length; i++) {
 
 
 // Función para extraer datos del json (apartado experiencia profesional)
-
 fetch("exp.json")
   .then(response => response.json())
   .then(respuesta => {
@@ -129,16 +127,13 @@ fetch("exp.json")
     });
   })
 
-
   .catch(error => {
     console.error("Error al cargar el archivo: ", error);
   });
 
 
 // Funciones para animar elementos
-
 // Rotar elemento
-
 function rotar(elemento) {
   elemento.addEventListener('mouseover', function () {
     elemento.classList.toggle('rotate-center');
